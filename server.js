@@ -2,10 +2,13 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/nodeappdatabase", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+mongoose.connect(
+  "mongodb+srv://herokuser:%21%40%23%24%25%5Eqwert@cluster0-8o8yp.mongodb.net/test?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }
+);
 
 //new user Schema
 const userSchema = new Schema({
@@ -155,7 +158,7 @@ Promise.all([kenny.save(), mark.save(), benny.save()])
   .then(findSpecificRecord)
   .then(updadeUserPassword)
   .then(updateUsername)
-  .then(findMarkAndDelete)
-  .then(findKennyAndDelete)
-  .then(findBennyAndRemove)
+  //   .then(findMarkAndDelete)
+  //   .then(findKennyAndDelete)
+  //   .then(findBennyAndRemove)
   .catch(console.log.bind(console));
